@@ -1,7 +1,7 @@
 # Title: SQL Project (at the moment)
 *Title will change when project is secured*
 
-Objective: Expand SQL skills!!
+<u> Objective </u>: Expand SQL skills!!
 
 Aim: Be more confident using SQL and more knowledgeable using it day-to-day.
 
