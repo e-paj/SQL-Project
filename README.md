@@ -1,10 +1,10 @@
 # Title: SQL Project (at the moment)
 *Title will change when project is secured*
 
-++Objective++: Expand SQL skills!!
+**Objective**: Expand SQL skills!!
 
-++Aim++: Be more confident using SQL and more knowledgeable using it day-to-day.
+**Aim**: Be more confident using SQL and more knowledgeable using it day-to-day.
 
-++Project++: **unknown** (still looking for ideas online)
+**Project**: **unknown** (still looking for ideas online)
 
-++Book++: To help me go through this project, I will use Walter Shields' *SQL Quickstart Guide* for guidance.
+**Book**: To help me go through this project, I will use Walter Shields' *SQL Quickstart Guide* for guidance.
