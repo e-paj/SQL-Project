@@ -1,11 +1,10 @@
-# Title: SQL Project (at the moment)
-*Title will change when project is secured*
+# Title: Personal Book Inventory
 
 **Objective**: Expand SQL skills!!
 
 **Aim**: Be more confident using SQL and more knowledgeable using it day-to-day.
 
-**Project**: **unknown** (still looking for ideas online)
+**Project**: Make a book inventory of the books I have. This would include title, author, year published, genre, location, and whether I have read it or not.
 
 **Book**: To help me go through this project, I will use Walter Shields' *SQL Quickstart Guide* for guidance.
 
