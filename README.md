@@ -9,3 +9,5 @@
 **Book**: To help me go through this project, I will use Walter Shields' *SQL Quickstart Guide* for guidance.
 
 **Excel**: The excel sheet called *Book Inventory* will be the focus of this project. This sheet contains the books that I have. This was made on June 22, 2020 so it was not updated. I have bought new books that I would have to add as well. This is are just some of the task that I would like to do for this project. 
+
+**Software**: For this project, I will be using DB2 by IBM. This is because this is the first software I used to do SQL. This is where most of my experience lies. Other softwares can be used as well. Though I have to admit, I do sometimes have a problem using the DB2 as the console could not be opened. 
