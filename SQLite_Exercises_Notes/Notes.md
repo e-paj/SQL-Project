@@ -4,6 +4,7 @@ September 10, 2021:
 - Using the same databases, make a comment line and comment block. 
 - Make an alias for selected field names in a table. 
 - Use the ORDER BY clause to order our results in a specific manner.
+  - If we want to know how many NULL there are, use the ORDER BY (ascending order).
 - Using LIMIT if we are not interested in seeing all the results. Or only wants to see specific number of results.
 
 September 09, 2021:
