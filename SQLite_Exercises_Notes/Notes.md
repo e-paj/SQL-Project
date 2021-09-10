@@ -6,8 +6,9 @@ September 10, 2021:
 - Use the ORDER BY clause to order our results in a specific manner.
   - If we want to know how many NULL there are, use the ORDER BY (ascending order).
 - Using LIMIT if we are not interested in seeing all the results. Or only wants to see specific number of results.
-- Using Operators in conjunction with clauses. 
+- Using Operators in conjunction with clauses (page 105). 
 - Use the WHERE clause to add specific condition to our queries.
+  - This always comes after the FROM but before the ORDER BY.
 
 September 09, 2021:
 - I downloaded SQLite to my desktop. 
