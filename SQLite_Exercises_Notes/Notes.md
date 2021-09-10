@@ -3,6 +3,7 @@
 September 10, 2021:
 - Using the same databases, make a comment line and comment block. 
 - Make an alias for selected field names in a table. 
+- Use the ORDER BY clause to order our results in a specific manner.
 
 September 09, 2021:
 - I downloaded SQLite to my desktop. 
