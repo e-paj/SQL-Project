@@ -1,0 +1,207 @@
+-- This is a comment.
+-- To make a comment block, do the following:
+/* 
+CREATED BY: Esnobi Pajanconi
+CREATED ON: September 10, 2021
+DESCRIPTION: To practice SQL commands.
+*/
+
+-- To make a proper query:
+SELECT 
+	FirstName,
+	LastName,
+	Email,
+	Phone
+FROM
+	customers;
+
+-- To make an alias for a selected field in the customers table:
+/*
+DESCRIPTION: this query selects the first name, last name, email, 
+and phone number fields from the customers table and demonstrates 
+four different ways to create an alias. 
+*/
+SELECT
+	FirstName AS 'First Name',
+	LastName AS [Last Name],
+	Email AS EMAIL,
+	Phone CELL
+FROM
+	customers
+
+-- ORDER BY clause:
+/*
+DESCRIPTION: This query selects the first name, last name, and 
+email from the customers table, ordered by Last Name.
+*/
+SELECT
+	FirstName AS [First Name],
+	LastName AS [Last Name],
+	Email As [EMAIL]
+FROM
+	customers
+ORDER BY
+	LastName ASC
+
+-- The ORDER BY clause can be used to sort by multiple columns as well.
+/* 
+DESCRIPTION: This query selects the first name, last name, and 
+email from the customers table, ordered by first name (ascending), 
+then last name (descending).
+*/
+
+SELECT
+	FirstName AS [First Name],
+	LastName AS [Last Name],
+	Email AS EMAIL
+FROM
+	customers
+ORDER BY
+	FirstName ASC,
+	LastName DESC
+
+-- On your own:
+SELECT
+	LastName AS [Last Name],
+	FirstName AS [First Name],
+	Email Email
+FROM
+	customers
+ORDER BY
+	LastName ASC
+
+-- LIMIT clause:
+/* 
+DESCRIPTION: This query selects the first 10 records from the 
+customers table, ordered by first name (ascending), then last 
+name(descending).
+*/
+
+SELECT
+	FirstName AS [First Name],
+	LastName AS [Last Name],
+	Email Email
+FROM
+	customers
+ORDER BY
+	FirstName ASC,
+	LastName DESC
+LIMIT 10
+
+-- Checkpoint #2:
+SELECT
+	Company
+FROM
+	customers
+ORDER BY
+	Company DESC
+
+-- Checkpoint #3:
+SELECT
+	FirstName AS [First Name],
+	PostalCode AS [Postal Code]
+FROM
+	customers
+ORDER BY
+	PostalCode ASC
+
+-- OPERATORS:
+SELECT
+	Total AS [Original Amount],
+	Total + 10 AS [Addition Operator],
+	Total - 10 AS [Subtraction Operator],
+	Total / 10 AS [DIVISION Operator],
+	Total * 10 AS [Multiplication Operator],
+	Total % 10 AS [Modulo Operator]
+FROM
+	invoices
+ORDER BY
+	Total DESC
+
+-- On your own:
+SELECT
+	Total AS [Original Amount],
+	Total * 1.15 AS [Total with TAX]
+FROM
+	invoices
+ORDER BY
+	Total DESC
+
+-- WHERE clause:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total = 1.98
+ORDER BY
+	InvoiceDate
+
+-- On your own #1:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total > 1.98
+ORDER BY
+	InvoiceDate
+
+-- On your own #2:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total >= 1.98
+ORDER BY
+	InvoiceDate
+
+-- On your own #3:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total <> 1.98
+ORDER BY
+	InvoiceDate
+
+-- BETWEEN, AND operators:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total BETWEEN 1.98 AND 5.00
+ORDER BY
+	InvoiceDate
+
+-- On your own:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total BETWEEN 1.98 AND 5.00
+ORDER BY
+	Total DESC
+
