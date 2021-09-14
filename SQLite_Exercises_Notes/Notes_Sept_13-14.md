@@ -8,3 +8,5 @@ Sept. 14, 2021:
   - Wildcard characters will always be enclosed in a single quotation marks (page 123). 
     - Add only one % after the letter to look for any words that start with that letter.
     - Adding another % before the letter would change the search to look for any words that has that leeter anywhere un it. 
+- DATE() Function: allows to exclude the time when specifying the date criteria.
+- 
