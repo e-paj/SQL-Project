@@ -1,0 +1,124 @@
+-- CASE Statement:
+
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total,
+	CASE
+	WHEN Total < 2.00 THEN 'Baseline Purchase'
+	WHEN Total BETWEEN 2.00 AND 6.99 THEN 'Low Purchase'
+	WHEN Total BETWEEN 7.00 AND 15.00 THEN 'Target Purchase'
+	ELSE 'Top Performers'
+	END AS PurchaseType
+FROM
+	invoices
+WHERE PurchaseType = 'Top Performers'
+ORDER BY
+	BillingCity;
+
+-- Data Analysis Checkpoint #1:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total,
+	CASE
+	WHEN BillingCountry = 'USA' THEN 'Domestic Sales'
+	ELSE 'Foreign Sales'
+	END AS SalesType
+FROM
+	invoices
+ORDER BY
+	BillingCity;
+
+-- Data Analysis Checkpoint #2:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total,
+	CASE
+	WHEN BillingCountry = 'USA' THEN 'Domestic Sales'
+	ELSE 'Foreign Sales'
+	END AS SalesType
+FROM
+	invoices
+ORDER BY
+	SalesType;
+
+-- Data Analysis Checkpoint #3:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total,
+	CASE
+	WHEN BillingCountry = 'USA' THEN 'Domestic Sales'
+	ELSE 'Foreign Sales'
+	END AS SalesType
+FROM
+	invoices
+WHERE SalesType = 'Domestic Sales' AND Total > 15.00
+ORDER BY
+	BillingCity;
+
+-- Joining two datasets:
+SELECT 
+	*
+FROM 
+	invoices 
+INNER JOIN 
+	customers 
+ON 
+	invoices.CustomerId = customers.CustomerId
+
+-- Another way with alias:
+SELECT
+	*
+FROM
+	invoices AS i
+INNER JOIN
+	customers AS c
+ON
+	i.CustomerId = c.CustomerId
+
+-- Selecting specific fields in each dataset:
+SELECT
+	c.LastName,
+	c.FirstName,
+	i.InvoiceId,
+	i.CustomerId,
+	i.InvoiceDate,
+	i.Total
+FROM
+	invoices AS i
+INNER JOIN
+	customers AS c
+ON
+	i.CustomerId = c.CustomerId
+ORDER BY
+	c.LastName;
+
+-- Left Outer Join:
+SELECT 
+	i.InvoiceId,
+	c.CustomerId,
+	c.FirstName,
+	c.LastName,
+	c.Address,
+	i.InvoiceDate,
+	i.BillingAddress,
+	i.Total
+FROM 
+	invoices AS i
+LEFT OUTER JOIN 
+	customers AS c
+ON 
+	i.CustomerId = c.CustomerId;
+
+-- Right Outer Join:
+SELECT * 
+FROM invoices AS i
+RIGHT OUTER JOIN customers AS c
+ON i.CustomerId = c.CustomerId;
