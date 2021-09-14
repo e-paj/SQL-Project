@@ -1,5 +1,8 @@
 # UPDATES:
 
+September 14, 2021:
+- Still doing the exercises! 
+
 September 13, 2021:
 - Getting the hang of SQLite. Just finishing as much of the exercises as much as possible.
 🎉🎉
