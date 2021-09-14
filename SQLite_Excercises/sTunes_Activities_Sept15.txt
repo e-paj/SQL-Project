@@ -1,0 +1,45 @@
+-- Inner Joins with More than two tables:
+
+SELECT
+	e.FirstName,
+	e.LastName,
+	e.EmployeeId,
+	c.FirstName,
+	c.LastName,
+	c.SupportRepId,
+	i.CustomerId,
+	i.Total
+FROM
+	invoices AS i
+INNER JOIN
+	customers AS c
+ON
+	i.CustomerId = c.CustomerId
+INNER JOIN
+	employees AS e
+ON 
+	c.SupportRepId = e.EmployeeId
+ORDER BY
+	i.Total DESC
+LIMIT 10;
+*/
+-- On your own:
+SELECT
+	a.Title,
+	t.name,
+	g.name,
+	g.GenreId,
+	t.UnitPrice
+FROM
+	albums AS a
+INNER JOIN
+	tracks AS t
+ON
+	a.AlbumId = t.AlbumId
+INNER JOIN
+	genres AS g
+ON 
+	t.GenreId = g.GenreId
+ORDER BY
+	t.UnitPrice DESC
+LIMIT 10;
