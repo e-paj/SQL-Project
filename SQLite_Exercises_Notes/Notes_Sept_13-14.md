@@ -10,4 +10,4 @@ Sept. 13, 2021:
     - Adding another % before the letter would change the search to look for any words that has that leeter anywhere un it. 
   - OR operator: allows to find the records that match any of teh criteria being asked for.
 - DATE() Function: allows to exclude the time when specifying the date criteria.
-- CASE Statement:
+- CASE Statement: allows to create a new, temporary field in the database that serves as a label for the data based on unique-specified conditions. 
