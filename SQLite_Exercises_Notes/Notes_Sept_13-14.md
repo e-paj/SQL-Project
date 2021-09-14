@@ -1,8 +1,8 @@
 ## What I'm doing in the exercises:
 
 Sept. 14, 2021:
-- 
-
+- Joins: a command that combines the field from two ro more tables of a relational database. 
+  - ON operator: provides the query with the link between the two tables. 
 
 Sept. 13, 2021:
 - OPERATORS:
