@@ -1,0 +1,250 @@
+-- IN Operator:
+
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total IN (1.98, 3.96)
+ORDER BY
+	InvoiceDate;
+	
+-- On your own:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total IN (13.86, 18.86, 21.86)
+ORDER BY
+	InvoiceDate;
+	
+-- Filtering Records by Text:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	BillingCity = 'Tucson'
+ORDER BY
+	Total;
+
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	BillingCity IN ('Tucson', 'Paris', 'London')
+ORDER BY
+	Total;
+
+-- Using LIKE operator to search for wildcards
+SELECT
+	InvoiceDate, 
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	BillingCity LIKE 'T%'
+ORDER BY
+	Total;
+
+SELECT
+	InvoiceDate, 
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	BillingCity LIKE '%T%'
+ORDER BY
+	Total;
+
+-- Using LIKE to exclude results:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	BillingCity NOT LIKE '%T%'
+ORDER BY
+	Total;
+
+-- Filtering Records by Date:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	InvoiceDate = '2009-01-03 00:00:00'
+ORDER BY
+	Total;
+
+-- On your own #1:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	InvoiceDate BETWEEN '2009-01-01 00:00:00' AND '2009-12-31 00:00:00'
+ORDER BY
+	Total;
+
+-- On your own #2:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	InvoiceDate > '2009-07-05 00:00:00'
+ORDER BY
+	Total DESC;
+
+
+-- The DATE () Function:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	DATE(InvoiceDate) = '2009-01-03'
+ORDER BY
+	Total;
+
+-- AND/OR Operators with two separate fields:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	DATE(InvoiceDate) > '2010-01-02' AND Total < 3
+ORDER BY
+	Total;
+	
+-- On your own:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	BillingCity LIKE 'P%'  AND Total > 2
+ORDER BY
+	Total;
+
+-- OR operator:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	BillingCity LIKE 'p%' OR BillingCity LIKE 'd%'
+ORDER BY
+	Total;
+
+-- An example of wrong query:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total > 1.98 AND BillingCity LIKE 'p%' OR BillingCity LIKE 'd%'
+ORDER BY
+	Total;
+
+-- The right way to query the above example:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total > 1.98 AND (BillingCity LIKE 'p%' OR BillingCity LIKE 'd%')
+ORDER BY
+	Total;
+
+-- On your own #1:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total < 1.98 AND (BillingCity LIKE 'p%' OR BillingCity LIKE 'd%')
+ORDER BY
+	Total;
+
+-- On your own #2:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+FROM
+	invoices
+WHERE
+	Total > 3 AND (BillingCity LIKE 'p%' OR BillingCity LIKE 'd%')
+ORDER BY
+	Total;
+
+-- Adding the CASE Statement to a query:
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total,
+	CASE 
+	WHEN Total < 2.00 THEN 'Baseline Purchase'
+	WHEN Total BETWEEN 2.00 AND 6.99 THEN 'Low Purchase'
+	WHEN Total BETWEEN 7.00 AND 15.00 THEN 'Target Purchase'
+	ELSE 'Top Performers'
+	END AS PurchaseType
+FROM
+	invoices
+ORDER BY
+	BillingCity;
