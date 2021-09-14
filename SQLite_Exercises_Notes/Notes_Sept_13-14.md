@@ -1,5 +1,8 @@
 ## What I'm doing in the exercises:
 
+Sept. 15, 2021:
+- Inner Joins with More Than Two tables:joins can combine more than two tables. 
+
 Sept. 14, 2021:
 - Joins: a command that combines the field from two ro more tables of a relational database. 
   - ON operator: provides the query with the link between the two tables. 
