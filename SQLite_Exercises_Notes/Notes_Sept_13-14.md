@@ -1,5 +1,9 @@
 ## What I'm doing in the exercises:
 
+Sept. 14, 2021:
+- 
+
+
 Sept. 13, 2021:
 - OPERATORS:
   - IN operator: used to find a list of precise values. Also allows us to find specific values within a dataset.
