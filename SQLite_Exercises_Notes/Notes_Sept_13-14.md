@@ -4,6 +4,8 @@ Sept. 14, 2021:
 - Joins: a command that combines the field from two ro more tables of a relational database. 
   - ON operator: provides the query with the link between the two tables. 
   - Inner Join: only returns matching records. any unmatched data from either table is ignored. 
+  - Left Outer Join: combines all the records from the left tbale with any matching records from the right table.
+  - Right Outer Join: returns the entire right table as well as matching information from the left table. 
 - Normalization: the process of distributing fields across related tables. It keeps the sizes of databases smaller, as it reduces the need to have duplicate fields in the same table. 
 
 Sept. 13, 2021:
