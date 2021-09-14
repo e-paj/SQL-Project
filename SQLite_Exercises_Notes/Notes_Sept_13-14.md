@@ -1,6 +1,6 @@
 ## What I'm doing in the exercises:
 
-Sept. 14, 2021:
+Sept. 13, 2021:
 - OPERATORS:
   - IN operator: used to find a list of precise values. Also allows us to find specific values within a dataset.
   - = operator only allows to find only one value. IN allows many values which have to be separated by a comma wrapped in a parenthesis.
@@ -8,6 +8,6 @@ Sept. 14, 2021:
   - Wildcard characters will always be enclosed in a single quotation marks (page 123). 
     - Add only one % after the letter to look for any words that start with that letter.
     - Adding another % before the letter would change the search to look for any words that has that leeter anywhere un it. 
-  - OR operator: allows to fins the records that match any of teh criteria being asked for.
+  - OR operator: allows to find the records that match any of teh criteria being asked for.
 - DATE() Function: allows to exclude the time when specifying the date criteria.
-- 
+- CASE Statement:
