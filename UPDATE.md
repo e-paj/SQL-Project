@@ -1,5 +1,9 @@
 # UPDATES:
 
+September 13, 2021:
+- Getting the hang of SQLite. Just finishing as much of the exercises as much as possible.
+🎉🎉
+
 September 09, 2021:
 - I have no choice but to change the software I used from Db2 of IBM Cloud to SQLite. For some reason, I could not open the console for Db2.
 - At the moment, I am doing the exercises provided in the book. This is so by the time I actually start with the *Personal Book Inventory* project I am more confident in using SQL.
