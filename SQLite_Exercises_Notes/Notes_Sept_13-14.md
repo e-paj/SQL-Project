@@ -2,6 +2,10 @@
 
 Sept. 15, 2021:
 - Inner Joins with More Than Two tables:joins can combine more than two tables. 
+- Using NOT, IS, and NULL with Left Outer Join: 
+  - Specific SQL keywords: 
+    - IS NULL in a WHERE clause would return only values that were null
+    - NOT NULL would return only values that were not null  
 
 Sept. 14, 2021:
 - Joins: a command that combines the field from two ro more tables of a relational database. 
