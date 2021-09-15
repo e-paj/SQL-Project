@@ -43,3 +43,113 @@ ON
 ORDER BY
 	t.UnitPrice DESC
 LIMIT 10;
+
+-- Left Outer Join with NULL, IS, and NOT:
+SELECT
+	ar.ArtistId AS [ArtistId From Artists Table],
+	al.ArtistId AS [ArtistId From Albums Table],
+	ar.name AS [Artist Name],
+	al.Title AS [Album Title]
+FROM
+	artists AS ar
+LEFT OUTER JOIN
+	albums AS al
+ON
+	ar.ArtistId = al.ArtistId;
+
+SELECT
+	ar.ArtistId AS [ArtistId From Artists Table],
+	al.ArtistId AS [ArtistId From Albums Table],
+	ar.name AS [Artist Name],
+	al.Title AS [Album Title]
+FROM
+	artists AS ar
+LEFT OUTER JOIN
+	albums AS al
+ON
+	ar.ArtistId = al.ArtistId
+WHERE
+	al.ArtistId IS NULL;
+
+/*
+Since Right Outer Join is not supported here, we can just
+use the Left Outer Join and switch where we put names of 
+the dataset.
+*/
+/*
+-- Example: if Right Outer JOIN
+SELECT
+	t.TrackId,
+	t.Composer,
+	t.name,
+	al.AlbumId,
+	al.Title
+FROM
+	albums AS al
+RIGHT OUTER JOIN
+	tracks AS t
+ON
+	t.AlbumId = al.AlbumId;
+*/
+-- Use Left Outer Join instead:
+SELECT
+	t.TrackId,
+	t.Composer,
+	t.name,
+	al.AlbumId,
+	al.Title
+FROM
+	tracks AS t
+LEFT OUTER JOIN
+	albums AS al
+ON
+	t.AlbumId = al.AlbumId;
+
+-- On your own:
+SELECT
+	t.TrackId,
+	t.Composer,
+	t.name,
+	al.AlbumId,
+	al.Title
+FROM
+	tracks AS t
+LEFT OUTER JOIN
+	albums AS al
+ON
+	t.AlbumId = al.AlbumId
+WHERE
+	Composer IS NULL;
+
+-- Data Analysis Checkpoint #2:
+SELECT
+	al.AlbumId,
+	t.TrackId,
+	al.Title AS [Album Title],
+	t.name AS [Track Name]
+FROM
+	albums AS al
+LEFT OUTER JOIN
+	tracks AS t
+ON 
+	al.AlbumId = t.AlbumId;
+
+-- Data Analysis Checkpoint #3:
+SELECT
+	g.GenreId,
+	t.TrackId,
+	al.AlbumId,
+	t.name AS [Track Name],
+	g.name AS [Genre],
+	al.Title AS [Album Title]
+FROM
+	tracks AS t
+LEFT OUTER JOIN
+	genres AS g
+ON
+	t.GenreId = g.GenreId
+LEFT OUTER JOIN
+	albums AS al
+ON
+	t.AlbumId = al.AlbumId;
+	
