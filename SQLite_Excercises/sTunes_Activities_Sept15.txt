@@ -22,7 +22,7 @@ ON
 ORDER BY
 	i.Total DESC
 LIMIT 10;
-*/
+
 -- On your own:
 SELECT
 	a.Title,
