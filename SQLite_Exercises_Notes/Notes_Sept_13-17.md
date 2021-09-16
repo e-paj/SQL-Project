@@ -12,6 +12,8 @@ Sept. 16, 2021:
   - SUBSTR():  
     - SUBSTR(X, Y): returns all characters through the end of the string X beginning with the Y-th.
     - SUBSTR(X,Y,Z): returns a substirng pf input string X that begins with the Y-th character and that is Z characters long.  
+  - STRFTIME(): formats the time and date information as a text string (page 206). 
+  - NOW: returns teh current time when it is executed. 
 
 
 Sept. 15, 2021:
