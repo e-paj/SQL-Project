@@ -1,5 +1,14 @@
 ## What I'm doing in the exercises:
 
+Sept. 16, 2021:
+- Currently, starting on Chapter 7 of the book!
+- Functions: are speacial keywords that accept certain parameters, perform an operation, and return the result of tat operation as a value (page 188).
+  - *String functions*: modeify character and text-based data.
+  - *Date functions*: modify time and date data.
+  - *Aggregate functions*: perform mathematical operations.   
+- String: another word for text data stored in a text-based data type. 
+
+
 Sept. 15, 2021:
 - Inner Joins with More Than Two tables:joins can combine more than two tables. 
 - Using NOT, IS, and NULL with Left Outer Join: 
