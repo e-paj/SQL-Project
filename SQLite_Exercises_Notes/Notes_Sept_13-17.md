@@ -10,6 +10,8 @@ Sept. 16, 2021:
   - Concatenation: joining fields together. To do this, use two-pipe || operator. 
   - LENGTH(): counts the number of characters there are in a string.
   - SUBSTR():  
+    - SUBSTR(X, Y): returns all characters through the end of the string X beginning with the Y-th.
+    - SUBSTR(X,Y,Z): returns a substirng pf input string X that begins with the Y-th character and that is Z characters long.  
 
 
 Sept. 15, 2021:
