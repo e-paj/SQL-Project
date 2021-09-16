@@ -7,6 +7,7 @@ Sept. 16, 2021:
   - *Date functions*: modify time and date data.
   - *Aggregate functions*: perform mathematical operations.   
 - String: another word for text data stored in a text-based data type. 
+  - Concatenation: joining fields together. To do this, use two-pipe || operator.  
 
 
 Sept. 15, 2021:
