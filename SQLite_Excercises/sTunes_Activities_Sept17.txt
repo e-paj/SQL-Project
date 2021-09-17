@@ -1,0 +1,107 @@
+-- Aggregate functions:
+
+SELECT
+	sum(Total) AS [Total Sales]
+FROM
+	invoices;
+
+SELECT
+	sum(Total) AS TotalSales,
+	avg(Total) AS AverageSales,
+	max(Total) AS MaximumSale,
+	min(Total) AS MinSale,
+	count(*) AS SalesCount
+FROM
+	invoices;
+
+-- On your own #1:
+SELECT
+	count(*) AS TotalInvoices
+FROM
+	invoices;
+
+-- On your own #2:
+SELECT
+	avg(Total) AS AvgTotal
+FROM
+	invoices;
+
+-- On your own #3:
+SELECT
+	max(Total) AS MaxInvoice
+FROM
+	invoices;
+
+-- ROUND():
+SELECT
+	avg(Total) AS [Average Sales],
+	round(avg(Total),2) AS [Rounded Average Sales]
+FROM
+	invoices;
+
+-- Group by clause:
+SELECT
+	BillingCity,
+	avg(Total) 
+FROM
+	invoices
+GROUP BY
+	BillingCity
+ORDER BY
+	BillingCity;
+
+-- On your own:
+SELECT
+	BillingCity,
+	avg(Total), 
+	round(avg(Total),2) AS [Rounded AvgTotal]
+FROM
+	invoices
+GROUP BY
+	BillingCity
+ORDER BY
+	BillingCity;
+
+-- WHERE and HAVING cluses with Grouped queries:
+SELECT
+	BillingCity,
+	avg(Total)
+FROM
+	invoices
+WHERE
+	BillingCity LIKE 'L%'
+GROUP BY
+	BillingCity
+ORDER BY
+	BillingCity;
+
+-- On your own:
+-- There are 3 billing cities that begin with L.
+
+-- Having clause:
+SELECT
+	BillingCity,
+	avg(Total)
+FROM
+	invoices
+GROUP BY
+	BillingCity
+HAVING 
+	avg(Total) > 5
+ORDER BY
+	BillingCity;
+
+SELECT
+	BillingCity,
+	avg(Total)
+FROM
+	invoices
+WHERE
+	BillingCity LIKE 'B%'
+GROUP BY
+	BillingCity
+HAVING
+	avg(Total) > 5
+ORDER BY
+	BillingCity;
+	
