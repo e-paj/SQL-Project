@@ -1,7 +1,8 @@
 ## What I'm doing in the exercises:
 
 Sept. 17, 2021:
-- Aggregate functions: can turn a range of number into a single data point based on a variety of mathematical operations. 
+- **Aggregate functions**: can turn a range of number into a single data point based on a variety of mathematical operations (page 212). 
+- Nested function: a function contained within another function. 
 
 Sept. 16, 2021:
 - Currently, starting on Chapter 7 of the book!
