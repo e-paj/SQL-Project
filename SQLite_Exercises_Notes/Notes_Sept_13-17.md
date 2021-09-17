@@ -5,6 +5,7 @@ Sept. 17, 2021:
 - *Nested function*: a function contained within another function. 
   - ROUND(): returns a floating point value X rounded to Y digits.
   - The WHERE clause does not work with aggregate data.
+  - HAVING clause always come after the Group by clause.
 
 Sept. 16, 2021:
 - Currently, starting on Chapter 7 of the book!
