@@ -4,8 +4,8 @@ Sept. 17, 2021:
 - **Aggregate functions**: can turn a range of number into a single data point based on a variety of mathematical operations (page 212). 
 - *Nested function*: a function contained within another function. 
   - ROUND(): returns a floating point value X rounded to Y digits.
-  - The WHERE clause does not work with aggregate data.
-  - HAVING clause always come after the Group by clause.
+  - The WHERE clause does not work with aggregate data. It is for filtering non-aggregate data.
+  - HAVING clause always come after the Group by clause. For filtering results containing aggregates. 
 
 Sept. 16, 2021:
 - Currently, starting on Chapter 7 of the book!
