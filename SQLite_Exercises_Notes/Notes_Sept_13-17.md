@@ -1,5 +1,8 @@
 ## What I'm doing in the exercises:
 
+Sept. 17, 2021:
+- Aggregate functions: can turn a range of number into a single data point based on a variety of mathematical operations. 
+
 Sept. 16, 2021:
 - Currently, starting on Chapter 7 of the book!
 - Functions: are speacial keywords that accept certain parameters, perform an operation, and return the result of tat operation as a value (page 188).
