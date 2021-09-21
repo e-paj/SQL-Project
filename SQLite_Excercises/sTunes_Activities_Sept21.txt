@@ -1,0 +1,306 @@
+-- Turning Previous Queries into Views:
+
+SELECT
+	round(avg(Total), 2) AS [Average Total]
+FROM
+	invoices;
+
+-- Turn the previous query into a view:
+CREATE VIEW V_AvgTotal AS
+SELECT
+	round(avg(Total), 2) AS [Average Total]
+FROM
+	invoices;
+
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total 
+FROM
+	invoices
+WHERE Total <
+	(SELECT
+		*
+	FROM
+		V_AvgTotal)
+ORDER BY
+	Total DESC;
+
+-- On your own #1:
+CREATE VIEW V_AvgTotal_NR AS
+SELECT
+	avg(Total) AS [Average Total]
+FROM
+	invoices;
+
+-- On your own #2:
+CREATE VIEW V_selectID AS
+SELECT
+	InvoiceDate
+FROM
+	invoices
+WHERE
+	InvoiceId IN (251, 252, 255);
+
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity
+FROM
+	invoices
+WHERE
+	InvoiceDate IN
+	(SELECT 
+		*
+	FROM
+		V_selectID);
+
+-- Creating a View from Joins:
+CREATE VIEW V_Tracks_InvoiceItems AS
+SELECT
+	ii.InvoiceId,
+	ii.UnitPrice,
+	ii.Quantity,
+	t.name,
+	t.Composer,
+	t.Milliseconds
+FROM
+	invoice_items ii
+INNER JOIN
+	tracks t
+ON ii.TrackId = t.TrackId;
+
+CREATE VIEW V_inv_cus_emp AS
+SELECT
+	i.InvoiceId,
+	i.InvoiceDate,
+	i.Total,
+	i.CustomerId,
+	c.FirstName,
+	c.LastName,
+	c.SupportRepId,
+	e.EmployeeId,
+	e.LastName,
+	e.FirstName,
+	e.Title
+FROM
+	invoices AS i
+INNER JOIN	
+	customers AS c
+ON
+	i.CustomerId = c.CustomerId
+INNER JOIN	
+	employees AS e
+ON
+	e.EmployeeId = c.SupportRepId
+ORDER BY
+	InvoiceDate;
+
+SELECT *
+FROM
+	V_Tracks_InvoiceItems ii
+INNER JOIN	
+	V_inv_cus_emp ice
+ON
+	ii.InvoiceId = ice.InvoiceId;
+
+-- Removing a View using the DROP statement:
+DROP VIEW
+	V_AvgTotal;
+
+-- Data Analysis Checkpoint #1:
+CREATE VIEW V_GlobalAverage AS
+SELECT
+	avg(Total)
+FROM	
+	invoices;
+
+-- Data Analysis Checkpoint #2:
+SELECT
+	BillingCity,
+	avg(Total) AS [City Average],
+	(SELECT
+		*
+	FROM
+		V_GlobalAverage) AS [Global Average]
+FROM
+	invoices
+GROUP BY
+	BillingCity
+ORDER BY
+	BillingCity;
+
+-- Data Analysis Checkpoint #3:
+CREATE VIEW V_CItyAvgVSGlobalAvg AS
+SELECT
+	BillingCity,
+	avg(Total) AS [City Average],
+	(SELECT
+		*
+	FROM
+		V_GlobalAverage) AS [Global Average]
+FROM
+	invoices
+GROUP BY
+	BillingCity
+ORDER BY
+	BillingCity;
+
+-- Data Analysis Checkpoint #4:
+DROP VIEW
+	V_GlobalAverage;
+-- The V_CityAvgVSGlobalAvg is empty.
+
+-- Inserting Data into a Database:
+INSERT INTO
+artists (name)
+VALUES ('Bob Marley')
+
+-- On your own #1:
+-- There are now 276 entries in the artists dataset.
+
+-- On your own #2:
+SELECT
+	name
+FROM
+	artists
+WHERE
+	name = 'Bob Marley';
+
+-- On your own #3:
+INSERT INTO
+artists (name)
+VALUES ('Peter Tosh');
+
+-- On your own #4:
+SELECT
+	ArtistId
+FROM
+	artists
+WHERE
+	name = 'Bob Marley';
+
+INSERT INTO
+employees
+VALUES ('9', 'Martin', 'Ricky', 'Sales Supoort Agent', '2', 
+'1975-02-07', '2018-01-05', '123 Houston St', 'New York', 'NY', 
+'United States', '11201', '(347) 525-8588', ' ', 
+'rmartin@gmail.com')
+
+-- On your own #1:
+-- It added a new employee in the table.
+
+-- On your own #2:
+-- It is expressed as empty quotation marks.
+
+-- On your own #3:
+INSERT INTO
+employees
+VALUES ('10', 'Anna', 'Smith', 'IT Staff', '3', '1990-03-05',
+'2019-06-17', '425 Sunflower Rd', 'Whistler', 'BC', 'Canada',
+'T7J 4F8', '+1 (587) 689-4567', '', 'anna.smith@yahoo.ca')
+
+-- On your own #4:
+INSERT INTO
+employees
+VALUES ('8', 'Anna', 'Smith', 'IT Staff', '3', '1990-03-05',
+'2019-06-17', '425 Sunflower Rd', 'Whistler', 'BC', 'Canada',
+'T7J 4F8', '+1 (587) 689-4567', '', 'anna.smith@yahoo.ca')
+-- The UNIQUE contraint error shows up. The Employee ID given is in use.
+
+-- Updating Data and the SET keyword:
+UPDATE
+employees
+SET PostalCode = '11202'
+WHERE
+	EmployeeId = 9;
+
+-- On your own #1:
+-- It chaned the postal code of the employee with ID 9.
+
+-- On your own #2:
+UPDATE
+employees
+SET Phone = '(347) 678-0934'
+WHERE
+	EmployeeId = 9;
+-- On your own #3:
+-- All rows would be affected.
+
+-- Updating:
+UPDATE
+employees
+SET Title = 'Sales Support Agent'
+WHERE
+	EmployeeId = 9;
+
+-- Deleting Data:
+DELETE FROM
+	employees
+WHERE
+	EmployeeId = 9;
+
+-- On your own #1:
+-- It deleted the employee with ID = 9 in the employees dataset.
+
+-- On your own #2:
+SELECT
+	e.LastName,
+	e.FirstName,
+	c.SupportRepId
+FROM
+	employees e
+INNER JOIN
+	customers c
+ON
+	e.EmployeeId = c.SupportRepId
+WHERE
+	e.Title = 'Sales Support Agent';
+
+DELETE FROM
+	customers
+WHERE 
+	SupportRepId IN (3,4,5);
+	
+DELETE FROM
+	employees
+WHERE
+	EmployeeId IN (3,4,5);
+
+-- Data Analysis Checkpoint #1:
+INSERT INTO
+customers
+VALUES ('60', 'Jen', 'Lee', ' ', '45 Winter St', 'Edmonton',
+'AB', 'Canada', 'T6N 3G6', '+1 (780) 459-2345', '', 
+'jen.lee@gmail.com', '6')
+
+-- Data Analysis Checkpoint #2:
+INSERT INTO
+invoices
+VALUES ('413', '60', '2013-01-18', '45 Winter St', 'Edmonton',
+'AB', 'Canada', 'T6N 3G6', '13.49')
+*/
+-- Data Analysis Checkpoint #3:
+
+SELECT
+	c.FirstName,
+	c.LastName,
+	i.Total,
+	i.InvoiceId
+FROM
+	invoices i
+INNER JOIN
+	customers c
+ON
+	i.CustomerId = c.CustomerId
+WHERE
+	c.CustomerId = 60;
+
+DELETE FROM
+	invoices
+WHERE CustomerId = 60;
+
+DELETE FROM
+	customers
+WHERE CustomerId = 60;
