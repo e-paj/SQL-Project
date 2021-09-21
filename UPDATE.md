@@ -1,5 +1,12 @@
 # UPDATES:
 
+September 22, 2021:
+- I imported the file to SQLite by making the excel file to a csv file.
+- After that just import the csv file to SQLite.
+- Ok, currently have 100 books in the file. I have more now, so I need to update the list.
+- Forget what I said about putting in Titles because I did do that.
+- This might be a short project, so look for more!
+
 September 14, 2021:
 - Still doing the exercises! 
 
