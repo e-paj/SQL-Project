@@ -1,0 +1,61 @@
+-- To see how many books I have:
+
+SELECT
+	count(Title)
+FROM
+	BookInventory;
+
+-- Update books I recently got:
+INSERT INTO
+BookInventory
+VALUES ('The Dutch House', 'Ann Patchett', 'Historical Fiction', 'Paperback', 'Bedroom', '2019', 'Mostly');
+
+INSERT INTO
+BookInventory
+VALUES ('Out of Body', 'Stella Cameron', 'Paranormal Fiction', 'Paperback', 'Bedroom', '2010', 'Little');
+
+INSERT INTO
+BookInventory
+VALUES ('Wicked Widow', 'Amanda Quick', 'Regency Fiction', 'Paperback', 'Bedroom', '2000', 'No');
+
+-- Updating a row (wrong spelling):
+UPDATE
+BookInventory
+SET Author = 'Casey McQuiston'
+WHERE 
+	Title = 'Red, White and Royal Blue';
+
+-- Updating rows that have Null values:
+UPDATE
+BookInventory
+SET Read = 'Little'
+WHERE
+	Title = 'Senior English Essays';
+
+UPDATE
+BookInventory
+SET Read = 'No'
+WHERE
+	Title = 'English Dictionary';
+
+-- I want to have a Book ID field: 
+CREATE TABLE books (
+	BookID INTEGER NOT NULL PRIMARY KEY,
+	Title TEXT,
+	Author TEXT,
+	Genre TEXT,
+	TypeOfBook TEXT,
+	Location TEXT,
+	Published INTEGER,
+	Read TEXT);
+
+ALTER TABLE BookInventory
+	ADD BookID INTEGER;
+
+INSERT INTO books (BookID, Title, Author)
+	SELECT ROWID, Title, Author FROM BookInventory; (there is a problem in this part of the code)
+
+
+
+
+
