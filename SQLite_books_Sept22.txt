@@ -54,6 +54,7 @@ ALTER TABLE BookInventory
 
 INSERT INTO books (BookID, Title, Author)
 	SELECT ROWID, Title, Author FROM BookInventory; (there is a problem in this part of the code)
+	hi
 
 
 
